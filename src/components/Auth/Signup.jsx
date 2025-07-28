@@ -12,9 +12,16 @@ export default function Signup() {
 
   const handleForm = (e) => {
     e.preventDefault();
-
-    setData("");
-    console.log(data.username, data.password);
+    if (data.password !== data.confirmPassword) {
+      alert("La contraseña no coincide");
+    }
+    setData({
+      username: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
+    console.log(data.email, data.password);
   };
 
   const handleUserdata = (e) => {
@@ -38,6 +45,7 @@ export default function Signup() {
             name="username"
             id="username"
             placeholder=""
+            value={data.username}
           />
         </s.InputGroup>
         <s.InputGroup>
@@ -48,6 +56,7 @@ export default function Signup() {
             name="email"
             id="email"
             placeholder=""
+            value={data.email}
           />
         </s.InputGroup>
         <s.InputGroup>
@@ -58,6 +67,7 @@ export default function Signup() {
             name="password"
             id="password"
             placeholder=""
+            value={data.password}
           />
         </s.InputGroup>
         <s.InputGroup>
@@ -67,6 +77,7 @@ export default function Signup() {
             name="confirmPassword"
             id="confirmPassword"
             placeholder=""
+            value={data.confirmPassword}
             onChange={handleUserdata}
           />
         </s.InputGroup>
