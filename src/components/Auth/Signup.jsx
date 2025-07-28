@@ -1,22 +1,64 @@
 /* eslint-disable no-unused-vars */
-import * as s from "./styles";
+import * as s from "./Logstyles";
+import { useState } from "react";
 
 export default function Signup() {
+  const [data, setData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleForm = (e) => {
+    e.preventDefault();
+
+    setData("");
+    console.log(data.username, data.password);
+  };
+
+  const handleUserdata = (e) => {
+    const { name, value } = e.target;
+
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+
   return (
-    <s.FormContainer>
+    <s.FormContainer onSubmit={handleForm}>
       <s.Title>Sign Up</s.Title>
       <s.Form>
         <s.InputGroup>
           <label htmlFor="username">Username</label>
-          <input type="text" name="username" id="username" placeholder="" />
+          <input
+            onChange={handleUserdata}
+            type="text"
+            name="username"
+            id="username"
+            placeholder=""
+          />
         </s.InputGroup>
         <s.InputGroup>
           <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" placeholder="" />
+          <input
+            onChange={handleUserdata}
+            type="email"
+            name="email"
+            id="email"
+            placeholder=""
+          />
         </s.InputGroup>
         <s.InputGroup>
           <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" placeholder="" />
+          <input
+            onChange={handleUserdata}
+            type="password"
+            name="password"
+            id="password"
+            placeholder=""
+          />
         </s.InputGroup>
         <s.InputGroup>
           <label htmlFor="confirmPassword">Confirm Password</label>
@@ -25,12 +67,13 @@ export default function Signup() {
             name="confirmPassword"
             id="confirmPassword"
             placeholder=""
+            onChange={handleUserdata}
           />
         </s.InputGroup>
-        <s.Sign>Create account</s.Sign>
+        <s.Sign style={{ marginTop: "10px" }}>Create account</s.Sign>
       </s.Form>
       <s.Signup>
-        Already have an account? <a href="#">Login</a>
+        Already have an account? <a href="/LogIn">Login</a>
       </s.Signup>
     </s.FormContainer>
   );

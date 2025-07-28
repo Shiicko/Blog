@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.div`
-  width: 320px;
-  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
   background-color: rgba(17, 24, 39, 1);
   padding: 2rem;
   color: rgba(243, 244, 246, 1);
+  justify-content: center;
 `;
 
 export const Title = styled.p`
@@ -13,10 +16,14 @@ export const Title = styled.p`
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
+  margin: 0;
 `;
 
 export const Form = styled.form`
   margin-top: 1.5rem;
+  border: solid 1px #49486596;
+  padding: 35px;
+  border-radius: 10px;
 `;
 
 export const InputGroup = styled.div`
