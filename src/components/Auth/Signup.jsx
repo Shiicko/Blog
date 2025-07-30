@@ -21,7 +21,9 @@ export default function Signup() {
       password: "",
       confirmPassword: "",
     });
-    console.log(data.email, data.password);
+
+    localStorage.setItem("data", JSON.stringify(data));
+    // console.log(data.email, data.password);
   };
 
   const handleUserdata = (e) => {
