@@ -1,8 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import * as s from "./Logstyles";
+import { useNavigate } from "react-router";
 
 export const LogIn = () => {
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,10 +25,13 @@ export const LogIn = () => {
 
     if (username === storedUsername && password === storedPassword) {
       console.log("Datos correctos");
+
+      localStorage.setItem("isLogged", true);
+      navigate("/");
       setPassword("");
       setUsername("");
     } else {
-      console.log("Datos incorrectos");
+      alert("Datos incorrectos");
     }
   };
 
