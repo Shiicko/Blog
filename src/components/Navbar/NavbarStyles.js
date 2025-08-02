@@ -8,6 +8,11 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   color: rgba(243, 244, 246, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
 `;
 
 export const Left = styled.div`

@@ -1,13 +1,21 @@
 import styled from "styled-components";
 
-export const container = styled.div`
-  height: 100vh;
+export const wrapper = styled.div`
   display: flex;
-  justify-content: center;
+  height: 100vh;
+`;
+
+export const container = styled.div`
+  flex: 1;
+  display: flex;
   flex-direction: column;
   align-items: center;
 `;
-
-export const title = styled.h1`
-  color: black;
+export const content = styled.div`
+  margin-left: 130px;
+  padding-top: 60px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
