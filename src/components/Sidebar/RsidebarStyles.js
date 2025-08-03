@@ -39,16 +39,23 @@ export const Ul = styled.ul`
 `;
 
 export const Li = styled.li`
-  span {
+  a {
     text-decoration: none;
     color: aliceblue;
     cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 5px;
-    transition: background-color 0.2s ease-in-out;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    display: inline-block;
   }
 
-  span:hover {
+  a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+  }
+
+  a:active {
+    transform: translateY(0);
     background-color: rgba(255, 255, 255, 0.1);
   }
 `;

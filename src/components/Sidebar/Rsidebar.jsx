@@ -8,13 +8,22 @@ export const Rsidebar = () => {
       <s.content>
         <s.Ul>
           <s.Li>
-            <span>Relatividad</span>
+            <a
+              target="blank"
+              href="https://www.iar.unlp.edu.ar/actividades/temas-de-investigacion/relatividad-general/#:~:text=La%20Relatividad%20General%20es%20una,entidad%20dotada%20de%20propiedades%20f%C3%ADsicas."
+            >
+              Relatividad general 1915
+            </a>
           </s.Li>
           <s.Li>
-            <span>Cuerdas</span>
+            <a href="https://nucleares.unam.mx/~alberto/physics/cuerdas.html">
+              Cuerdas
+            </a>
           </s.Li>
           <s.Li>
-            <span>Incertidumbre</span>
+            <a href="https://nucleares.unam.mx/~vieyra/node20.html">
+              Incertidumbre
+            </a>
           </s.Li>
         </s.Ul>
       </s.content>
