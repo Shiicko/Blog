@@ -6,7 +6,7 @@ export const Container = styled.div`
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   color: rgba(243, 244, 246, 1);
   position: fixed;
   top: 0;

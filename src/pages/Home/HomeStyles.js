@@ -12,7 +12,6 @@ export const container = styled.div`
   align-items: center;
 `;
 export const content = styled.div`
-  margin-left: 130px;
   padding-top: 60px;
   flex: 1;
   display: flex;

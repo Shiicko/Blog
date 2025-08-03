@@ -17,6 +17,7 @@ export const cardContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  flex-direction: column;
 `;
 
 export const card = styled.div`

@@ -5,13 +5,14 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
+  body,html {
     margin: 0;
     padding: 0;
     background-color: #e6ebf1;
     color: #1a1a1a;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    user-select: none;
   }
 
   h1, h2, h3 {
