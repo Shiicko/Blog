@@ -9,7 +9,7 @@ export const container = styled.div`
   h2 {
     margin-bottom: 30px;
     font-size: 28px;
-    color: #333;
+    color: #f8fafc;
   }
 `;
 
@@ -22,7 +22,7 @@ export const cardContainer = styled.div`
 
 export const card = styled.div`
   width: 650px;
-  background-color: white;
+  background-color: #10151b;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   padding: 24px;
@@ -52,7 +52,7 @@ export const username = styled.p`
 
 export const date = styled.p`
   font-size: 13px;
-  color: #777;
+  color: #c4c4c4ff;
   margin: 2px 0 0 0;
 `;
 
@@ -67,13 +67,13 @@ export const content = styled.div`
   h3 {
     font-size: 20px;
     margin-bottom: 12px;
-    color: #222;
+    color: ffffff;
   }
 
   p {
     font-size: 15px;
     line-height: 1.6;
-    color: #444;
+    color: #a1a1aa;
   }
 `;
 
@@ -83,7 +83,7 @@ export const footer = styled.div`
 `;
 
 export const tipButton = styled.button`
-  background-color: #0073e6;
+  background-color: #011239;
   color: white;
   border: none;
   padding: 10px 18px;
@@ -93,6 +93,6 @@ export const tipButton = styled.button`
   font-size: 14px;
 
   &:hover {
-    background-color: #005bb5;
+    background-color: rgba(0, 71, 143, 0.88);
   }
 `;

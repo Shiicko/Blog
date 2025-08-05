@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { Card } from "../../components/Card/Card";
 import { FormPost } from "../../components/Input/FormPost";
 import { Rsidebar } from "../../components/Sidebar/Rsidebar";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
@@ -12,6 +13,7 @@ export const Home = () => {
       <Rsidebar />
 
       <s.content>
+        <Card />
         <h1>Posts mas recientes</h1>
         <FormPost />
         <Posts />

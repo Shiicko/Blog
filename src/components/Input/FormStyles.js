@@ -4,8 +4,8 @@ export const Container = styled.div`
   width: 100%;
   margin-top: 15px;
   max-width: 500px;
-  padding: 12px;
-  background: #fff;
+  padding: 20px;
+  background: #10151b;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 `;
@@ -24,11 +24,12 @@ export const Button = styled.button`
   margin-top: 10px;
   padding: 8px 16px;
   color: #fff;
+  background-color: #020a18;
   border: none;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
   &:hover {
-    background-color: #004182;
+    background-color: #020a1870;
   }
 `;

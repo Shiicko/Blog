@@ -5,8 +5,9 @@ export const container = styled.div`
   top: 0;
   left: 40px;
   width: 130px;
-  height: 100vh;
-  background-color: rgba(17, 24, 39, 1);
+  height: 60vh;
+  border-radius: 20px;
+  background-color: rgb(0 0 0);
   display: flex;
   flex-direction: column;
   justify-content: center;

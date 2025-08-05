@@ -1,34 +1,35 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-   *, *::before, *::after {
+  *, *::before, *::after {
     box-sizing: border-box;
   }
 
-  body,html {
+  html, body {
     margin: 0;
     padding: 0;
-    background-color: #e6ebf1;
-    color: #1a1a1a;
-    font-family: 'Inter', sans-serif;
+    min-height: 100%;
+    background-color: #000306;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
     user-select: none;
+    color: #e6edf3;
   }
 
   h1, h2, h3 {
-    color: #1a1a1a;
+    color: #f8fafc;
     margin-bottom: 0.5em;
   }
 
   p {
-    color: #555;
+    color: #c9d1d9;
   }
 
   button {
     font-family: inherit;
     cursor: pointer;
-    background-color: #4e89ff;
-    color: white;
+    background-color: #3b82f6;
+    color: #f8fafc;
     border: none;
     border-radius: 6px;
     padding: 10px 16px;
@@ -37,17 +38,19 @@ const GlobalStyles = createGlobalStyle`
   }
 
   button:hover {
-    background-color: #3a6fd8;
+    background-color: #60a5fa;
   }
 
   a {
     text-decoration: none;
-    color: #4e89ff;
+    color: #60a5fa;
   }
 
   input, textarea {
     font-family: inherit;
-    border: 1px solid #c5cee0;
+    background-color: #161b22;
+    color: #e6edf3;
+    border: 1px solid #2f3e4e;
     border-radius: 4px;
     padding: 10px;
     font-size: 1rem;
@@ -56,8 +59,8 @@ const GlobalStyles = createGlobalStyle`
 
   input:focus, textarea:focus {
     outline: none;
-    border-color: #4e89ff;
-    box-shadow: 0 0 0 2px rgba(78, 137, 255, 0.2);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
   }
 `;
 

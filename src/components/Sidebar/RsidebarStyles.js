@@ -5,7 +5,9 @@ export const Title = styled.h3`
   font-size: 1.3rem;
   margin-bottom: 1rem;
   text-align: center;
-  font-weight: 500;
+  font-weight: 800;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 `;
 
 export const container = styled.div`
@@ -14,13 +16,13 @@ export const container = styled.div`
   right: 40px;
   width: 150px;
   height: 70vh;
-  background-color: rgba(17, 24, 39, 1);
+  background-color: rgb(0 0 0);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding-top: 60px;
-  border-radius: 10px;
+  border-radius: 20px;
 `;
 
 export const content = styled.div`
