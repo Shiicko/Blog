@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { useNavigate } from "react-router";
+import { redirect, useNavigate } from "react-router";
 import * as s from "./NavbarStyles";
+import { MainBtn } from "../button/MainBtn";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
   let userState = localStorage.getItem("isLogged");
   const navigate = useNavigate();
 
@@ -14,8 +15,9 @@ export const Navbar = () => {
 
   return (
     <s.Container>
-      <s.Left>
+      <s.Left style={{ display: "flex", gap: "40px" }}>
         <a href="/">Inicio</a>
+        <a href="">Noticias</a>
       </s.Left>
       <s.Center></s.Center>
       <s.Right>
@@ -24,7 +26,7 @@ export const Navbar = () => {
             Logout
           </s.LoginButton>
         ) : (
-          <s.LoginButton href="/Login">Login</s.LoginButton>
+          <MainBtn onClick={() => navigate("/Login")}>Login</MainBtn>
         )}
       </s.Right>
     </s.Container>

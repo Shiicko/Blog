@@ -22,7 +22,7 @@ export const cardContainer = styled.div`
 
 export const card = styled.div`
   width: 650px;
-  background-color: #10151b;
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   padding: 24px;
@@ -83,16 +83,12 @@ export const footer = styled.div`
 `;
 
 export const tipButton = styled.button`
-  background-color: #011239;
+  background: linear-gradient(187deg, rgb(0 17 135) 0%, rgb(30 0 37) 86%);
+  border: 1px solid rgba(0, 255, 255, 0.5);
   color: white;
-  border: none;
   padding: 10px 18px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;
-
-  &:hover {
-    background-color: rgba(0, 71, 143, 0.88);
-  }
 `;

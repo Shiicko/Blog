@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { MainBtn } from "../button/MainBtn";
 import * as s from "./SidebarStyles";
 
 export const Sidebar = () => {
@@ -15,7 +16,7 @@ export const Sidebar = () => {
           <p>Siguiendo: 87</p>
         </s.Stats>
 
-        <s.Button>Ver perfil</s.Button>
+        <MainBtn>Ver perfil</MainBtn>
       </s.content>
     </s.container>
   );

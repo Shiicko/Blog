@@ -16,12 +16,18 @@ export const Rsidebar = () => {
             </a>
           </s.Li>
           <s.Li>
-            <a href="https://nucleares.unam.mx/~alberto/physics/cuerdas.html">
+            <a
+              target="blank"
+              href="https://nucleares.unam.mx/~alberto/physics/cuerdas.html"
+            >
               Cuerdas
             </a>
           </s.Li>
           <s.Li>
-            <a href="https://nucleares.unam.mx/~vieyra/node20.html">
+            <a
+              target="blank"
+              href="https://nucleares.unam.mx/~vieyra/node20.html"
+            >
               Incertidumbre
             </a>
           </s.Li>

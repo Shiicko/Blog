@@ -9,26 +9,27 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     min-height: 100%;
-    background-color: #000306;
-    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
+    background-color:#e1edff;
+  // #000306
+    font-family: monospace;
+    line-height: 1.5;
     user-select: none;
-    color: #e6edf3;
+    color: #000000ff;
   }
 
   h1, h2, h3 {
-    color: #f8fafc;
+    color: #000000ff;
     margin-bottom: 0.5em;
   }
 
   p {
-    color: #c9d1d9;
+    color: #000000b6;
   }
 
   button {
     font-family: inherit;
     cursor: pointer;
-    background-color: #3b82f6;
+    background-color: rgb(241 241 241);
     color: #f8fafc;
     border: none;
     border-radius: 6px;
@@ -43,7 +44,6 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: #60a5fa;
   }
 
   input, textarea {
