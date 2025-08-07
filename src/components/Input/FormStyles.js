@@ -1,35 +1,62 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  width: 500px;
+  background: rgb(241 241 241);
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+`;
+
+export const TextInput = styled.input`
   width: 100%;
-  margin-top: 15px;
-  max-width: 500px;
-  padding: 20px;
-  background: #ffffff;
+  background: #1e1e1e;
+  border: none;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-`;
-
-export const Input = styled.input`
-  width: 100%;
-  border: none;
-  outline: none;
+  padding: 12px 15px;
+  color: white;
   font-size: 1rem;
-  padding: 10px;
-  border-radius: 6px;
-  background-color: #f5f5f5;
+  margin-bottom: 12px;
+
+  &:focus {
+    outline: 2px solid #4e89ff;
+  }
 `;
 
-export const Button = styled.button`
-  margin-top: 10px;
-  padding: 8px 16px;
-  color: #fff;
-  background-color: #020a18;
+export const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+`;
+
+export const PublishButton = styled.button`
+  margin-left: auto;
+  padding: 8px 18px;
+  background: #4e89ff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
+  color: white;
   cursor: pointer;
+
   &:hover {
-    background-color: #020a1870;
+    background: #3a6fd8;
+  }
+`;
+export const TextArea = styled.textarea`
+  width: 100%;
+  background: #1e1e1e;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 15px;
+  color: white;
+  font-size: 1rem;
+  min-height: 80px;
+  resize: vertical;
+  margin-bottom: 12px;
+
+  &:focus {
+    outline: 2px solid #4e89ff;
   }
 `;

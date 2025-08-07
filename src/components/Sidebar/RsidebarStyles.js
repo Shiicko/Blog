@@ -14,7 +14,7 @@ export const container = styled.div`
   right: 40px;
   width: 150px;
   height: 70vh;
-  background-color: #ffffff;
+  background-color: #9df9f9;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -45,6 +45,7 @@ export const Li = styled.li`
     cursor: pointer;
     font-weight: bolder;
     padding: 6px 10px;
+    border: 1px solid;
     border-radius: 6px;
     transition: background-color 0.25s ease, transform 0.15s ease;
     display: inline-block;

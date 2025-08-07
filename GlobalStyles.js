@@ -10,11 +10,9 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     min-height: 100%;
     background-color:#e1edff;
-  // #000306
     font-family: monospace;
     line-height: 1.5;
     user-select: none;
-    color: #000000ff;
   }
 
   h1, h2, h3 {

@@ -4,6 +4,7 @@ import * as s from "./RsidebarStyles";
 export const Rsidebar = () => {
   return (
     <s.container>
+      <hr style={{ width: "100%", marginTop: "-5px" }} />
       <s.Title>Artículos Científicos</s.Title>
       <s.content>
         <s.Ul>
