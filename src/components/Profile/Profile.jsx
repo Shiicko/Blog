@@ -9,18 +9,13 @@ export const Profile = ({ posts }) => {
         posts.map((post) => (
           <s.card key={post.id}>
             <s.name>{post.autor}</s.name>
-            <s.avatar>🖥️</s.avatar>
-            <s.stats>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
+            <s.avatar src={post.avatar} />
+            <s.statsMain>
+              <s.stats>
                 <span>12 publicaciones</span>
                 <span>47 likes</span>
-              </div>
-            </s.stats>
+              </s.stats>
+            </s.statsMain>
           </s.card>
         ))}
     </s.container>
