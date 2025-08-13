@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { Comment } from "../../components/Input/Comment";
 import * as s from "./PostStyles";
 
 export const Posts = ({ posts }) => {
@@ -18,6 +19,7 @@ export const Posts = ({ posts }) => {
           <p>{post.contenido}</p>
         </s.content>
         <s.footer>
+          <Comment />
           <s.tipButton>Enviar propina</s.tipButton>
         </s.footer>
       </s.card>

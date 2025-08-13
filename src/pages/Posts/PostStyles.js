@@ -79,7 +79,7 @@ export const content = styled.div`
 
 export const footer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 `;
 
 export const tipButton = styled.button`
