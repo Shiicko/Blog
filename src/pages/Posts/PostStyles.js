@@ -80,6 +80,7 @@ export const content = styled.div`
 export const footer = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 7px;
 `;
 
 export const tipButton = styled.button`

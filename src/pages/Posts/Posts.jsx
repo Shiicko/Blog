@@ -19,7 +19,9 @@ export const Posts = ({ posts }) => {
       </s.content>
       <s.footer>
         <Comment />
-        <s.tipButton>Enviar propina</s.tipButton>
+        <s.tipButton as="a" target="blank" href="https://joelium.vercel.app/">
+          Enviar Joelium
+        </s.tipButton>
       </s.footer>
     </s.card>
   ));
