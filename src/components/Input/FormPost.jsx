@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import * as s from "./FormStyles";
-import { FaImage } from "react-icons/fa6";
+import { FaImage } from "react-icons/fa";
 
 export const FormPost = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -18,12 +18,14 @@ export const FormPost = ({ onSubmit }) => {
       imagen: formData.archivo ? URL.createObjectURL(formData.archivo) : null,
     };
 
-    onSubmit(newPost);
-    setFormData({
-      titulo: "",
-      contenido: "",
-      archivo: null,
-    });
+    if (!newPost.titulo || newPost.titulo.trim() === "") {
+      alert("No puedes publicar sin título");
+      setFormData({ titulo: "", contenido: "", archivo: null });
+      return;
+    }
+
+    onSubmit(newPost); // enviar al Home
+    setFormData({ titulo: "", contenido: "", archivo: null });
   };
 
   return (

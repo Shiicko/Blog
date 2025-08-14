@@ -9,19 +9,24 @@ import { mockPosts } from "../../data/mockPosts";
 import * as s from "./HomeStyles";
 
 export const Home = () => {
-  const [posts, setPosts] = useState(mockPosts);
+  const [posts, setPosts] = useState(() => {
+    const saved = JSON.parse(localStorage.getItem("Post"));
+    return saved || mockPosts;
+  });
 
   const uploadPost = (newPost) => {
     const postConId = {
       ...newPost,
       id: crypto.randomUUID(),
-      fecha: "7 ago 2025", //new Date().toLocaleDateString("es-AR"),
+      fecha: new Date().toLocaleDateString("es-AR"),
       autor: "Paul Dirac",
       avatar:
         "https://upload.wikimedia.org/wikipedia/commons/8/8a/Paul_Dirac%2C_1933%2C_head_and_shoulders_portrait%2C_bw.jpg",
     };
 
-    setPosts([postConId, ...posts]);
+    const updatedPosts = [postConId, ...posts];
+    setPosts(updatedPosts); // actualizar estado
+    localStorage.setItem("Post", JSON.stringify(updatedPosts));
   };
 
   return (

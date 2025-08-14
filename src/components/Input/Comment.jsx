@@ -11,8 +11,8 @@ export const Comment = () => {
       }}
     >
       <div style={{ display: "flex", gap: "30px" }}>
-        <FaRegComments size={30} />
         <AiOutlineLike size={30} />
+        <FaRegComments size={30} />
       </div>
     </div>
   );
