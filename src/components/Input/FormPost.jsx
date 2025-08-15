@@ -24,7 +24,7 @@ export const FormPost = ({ onSubmit }) => {
       return;
     }
 
-    onSubmit(newPost); // enviar al Home
+    onSubmit(newPost);
     setFormData({ titulo: "", contenido: "", archivo: null });
   };
 
