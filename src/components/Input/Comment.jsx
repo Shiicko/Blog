@@ -1,10 +1,12 @@
 import { FaRegComments } from "react-icons/fa6";
-import { AiOutlineLike } from "react-icons/ai";
+import { FaHeart } from "react-icons/fa";
 import { useState } from "react";
 
-export const Comment = () => {
+export const Comment = ({ postId }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [comments, setComments] = useState("");
+  const [commentList, setCommentList] = useState([]);
+  const [liked, setLiked] = useState(false);
 
   const handleComment = () => {
     setIsOpen(!isOpen);
@@ -12,22 +14,35 @@ export const Comment = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("comentario enviado", comments);
-    setComments("");
-    setIsOpen(false);
+    if (comments === "") {
+      alert("No escribiste nada");
+    } else {
+      setCommentList([...commentList, { postId, text: comments }]);
+      setComments("");
+      setIsOpen(false);
+    }
   };
+  const comentariosDeEstePost = commentList.filter((c) => c.postId === postId);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        cursor: "pointer",
-      }}
-    >
+    <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
       <div style={{ display: "flex", gap: "30px" }}>
-        <AiOutlineLike size={30} />
+        <FaHeart
+          size={30}
+          style={{
+            cursor: "pointer",
+            color: liked ? "red" : "black",
+            transition: "color 0.3s ease",
+          }}
+          onClick={() => setLiked(!liked)}
+        />
         {!isOpen ? (
-          <FaRegComments size={30} onClick={handleComment} />
+          <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+            <FaRegComments size={30} onClick={handleComment} />
+            <span style={{ fontSize: "14px" }}>
+              {comentariosDeEstePost.length}
+            </span>
+          </div>
         ) : (
           <form
             style={{ display: "flex", alignItems: "center", gap: "5px" }}
@@ -37,7 +52,7 @@ export const Comment = () => {
               value={comments}
               onChange={(e) => setComments(e.target.value)}
               placeholder="Escribe un comentario"
-            ></input>
+            />
             <button
               type="submit"
               style={{ backgroundColor: "#161b22", cursor: "pointer" }}
@@ -47,7 +62,23 @@ export const Comment = () => {
           </form>
         )}
       </div>
+
+      {comentariosDeEstePost.map((c, i) => (
+        <p
+          key={i}
+          style={{
+            margin: "2px 0",
+            padding: "5px 10px",
+            backgroundColor: "#f0f0f0",
+            borderRadius: "8px",
+            fontSize: "14px",
+            maxWidth: "300px",
+            wordWrap: "break-word",
+          }}
+        >
+          {c.text}
+        </p>
+      ))}
     </div>
   );
 };
-// <FaRegComments onClick={handleComment}  />
