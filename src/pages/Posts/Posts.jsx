@@ -19,9 +19,11 @@ export const Posts = ({ posts }) => {
       </s.content>
       <s.footer>
         <Comment />
-        <s.tipButton as="a" target="blank" href="https://joelium.vercel.app/">
-          Enviar Joelium
-        </s.tipButton>
+        <div>
+          <s.tipButton as="a" target="blank" href="https://joelium.vercel.app/">
+            Enviar Joelium
+          </s.tipButton>
+        </div>
       </s.footer>
     </s.card>
   ));

@@ -1,12 +1,13 @@
 import { FaRegComments } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { useState } from "react";
+import Btn from "../btn/Btn";
 
 export const Comment = ({ postId }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [comments, setComments] = useState("");
   const [commentList, setCommentList] = useState([]);
-  const [liked, setLiked] = useState(false);
+  // const [liked, setLiked] = useState(false);
 
   const handleComment = () => {
     setIsOpen(!isOpen);
@@ -26,16 +27,8 @@ export const Comment = ({ postId }) => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-      <div style={{ display: "flex", gap: "30px" }}>
-        <FaHeart
-          size={30}
-          style={{
-            cursor: "pointer",
-            color: liked ? "red" : "black",
-            transition: "color 0.3s ease",
-          }}
-          onClick={() => setLiked(!liked)}
-        />
+      <div style={{ display: "flex", gap: "30px", alignItems: "center" }}>
+        <Btn />
         {!isOpen ? (
           <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
             <FaRegComments size={30} onClick={handleComment} />
@@ -49,6 +42,7 @@ export const Comment = ({ postId }) => {
             onSubmit={handleSubmit}
           >
             <input
+              style={{ cursor: "pointer" }}
               value={comments}
               onChange={(e) => setComments(e.target.value)}
               placeholder="Escribe un comentario"
@@ -82,3 +76,15 @@ export const Comment = ({ postId }) => {
     </div>
   );
 };
+
+{
+  /* <FaHeart
+          size={30}
+          style={{
+            cursor: "pointer",
+            color: liked ? "red" : "black",
+            transition: "color 0.3s ease",
+          }}
+          onClick={() => setLiked(!liked)}
+        /> */
+}
