@@ -25,7 +25,7 @@ export const Home = () => {
     };
 
     const updatedPosts = [postConId, ...posts];
-    setPosts(updatedPosts); // actualizar estado
+    setPosts(updatedPosts);
     localStorage.setItem("Post", JSON.stringify(updatedPosts));
   };
 

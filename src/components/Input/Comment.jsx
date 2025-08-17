@@ -1,29 +1,38 @@
 import { FaRegComments } from "react-icons/fa6";
-import { FaHeart } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Btn from "../btn/Btn";
 
 export const Comment = ({ postId }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [comments, setComments] = useState("");
   const [commentList, setCommentList] = useState([]);
-  // const [liked, setLiked] = useState(false);
 
   const handleComment = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem("commentsByPost")) || {};
+    setCommentList(stored[postId] || []);
+  }, [postId]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (comments === "") {
-      alert("No escribiste nada");
-    } else {
-      setCommentList([...commentList, { postId, text: comments }]);
-      setComments("");
-      setIsOpen(false);
-    }
+    if (!comments) return alert("No escribiste nada");
+
+    const newComment = { text: comments };
+    const updatedCommentList = [...commentList, newComment];
+    setCommentList(updatedCommentList);
+
+    const stored = JSON.parse(localStorage.getItem("commentsByPost")) || {};
+    stored[postId] = updatedCommentList;
+    localStorage.setItem("commentsByPost", JSON.stringify(stored));
+
+    setComments("");
+    setIsOpen(false);
   };
-  const comentariosDeEstePost = commentList.filter((c) => c.postId === postId);
+
+  const comentariosDeEstePost = commentList;
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
@@ -76,15 +85,3 @@ export const Comment = ({ postId }) => {
     </div>
   );
 };
-
-{
-  /* <FaHeart
-          size={30}
-          style={{
-            cursor: "pointer",
-            color: liked ? "red" : "black",
-            transition: "color 0.3s ease",
-          }}
-          onClick={() => setLiked(!liked)}
-        /> */
-}
