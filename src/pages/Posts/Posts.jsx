@@ -20,7 +20,7 @@ export const Posts = ({ posts }) => {
       <s.footer>
         <Comment postId={post.id} />
         <div>
-          <s.tipButton as="a" target="blank" href="https://joelium.vercel.app/">
+          <s.tipButton as="a" target="blank" href="/bank">
             Enviar Joelium
           </s.tipButton>
         </div>

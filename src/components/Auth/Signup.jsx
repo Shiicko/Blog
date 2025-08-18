@@ -23,7 +23,6 @@ export default function Signup() {
     });
 
     localStorage.setItem("data", JSON.stringify(data));
-    // console.log(data.email, data.password);
   };
 
   const handleUserdata = (e) => {
