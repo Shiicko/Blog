@@ -128,6 +128,11 @@ export const Bank = () => {
             )}
           </>
         )}
+        <s.tipButton>
+          <a target="_blank" href="https://joelium.vercel.app/">
+            visitar Joelium
+          </a>
+        </s.tipButton>
       </s.tipContainer>
 
       <s.recentTransactions>
