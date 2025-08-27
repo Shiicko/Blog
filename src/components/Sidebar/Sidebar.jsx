@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { MainBtn } from "../button/MainBtn";
 import { Profile } from "../Profile/Profile";
 import * as s from "./SidebarStyles";
+import { AuthContext } from "../../context/AuthContext";
 
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useContext(AuthContext);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -23,7 +25,7 @@ export const Sidebar = () => {
     <s.container>
       <s.content>
         <s.Avatar src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Paul_Dirac%2C_1933%2C_head_and_shoulders_portrait%2C_bw.jpg" />
-        <s.Username>Paul Dirac</s.Username>
+        <s.Username>{user?.username}</s.Username>
         <s.Subtitle>Físico teórico</s.Subtitle>
 
         <s.Stats>

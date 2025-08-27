@@ -1,25 +1,29 @@
-import { Route, Routes, useLocation } from "react-router";
+import { Route, Routes, useLocation, Navigate } from "react-router";
 import { Home } from "./pages/Home/Home";
 import { LogIn } from "./components/Auth/LogIn";
 import Signup from "./components/Auth/Signup";
 import { Navbar } from "./components/Navbar/Navbar";
 import { ErrorPage } from "./pages/Error/ErrorPage";
 import { Bank } from "./components/CardData/Bank";
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 
 export const App = () => {
   const location = useLocation();
-
-  const hideNavbarRoutes = ["/Login", "/signup", "/bank"];
-
+  const hideNavbarRoutes = ["/login", "/signup", "/bank"];
   const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
+  const { user } = useContext(AuthContext);
 
   return (
     <>
       {shouldShowNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LogIn />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={user ? <Navigate to="/" /> : <LogIn />} />
+        <Route
+          path="/signup"
+          element={user ? <Navigate to="/" /> : <Signup />}
+        />
         <Route path="/bank" element={<Bank />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

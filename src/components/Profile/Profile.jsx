@@ -1,14 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import * as s from "./profileStlyes";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 export const Profile = ({ posts }) => {
+  const { user } = useContext(AuthContext);
+
   return (
     <s.container>
       {posts &&
         posts.map((post) => (
           <s.card key={post.id}>
-            <s.name>{post.autor}</s.name>
+            <s.name>{user?.username}</s.name>
             <s.avatar src={post.avatar} />
             <s.statsMain>
               <s.stats>

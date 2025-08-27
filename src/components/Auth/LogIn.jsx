@@ -2,34 +2,46 @@
 import { useState } from "react";
 import * as s from "./Logstyles";
 import { useNavigate } from "react-router";
+import { AuthContext } from "../../context/AuthContext";
+import { useContext } from "react";
 
 export const LogIn = () => {
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const { user, setUser } = useContext(AuthContext);
 
   const getUser = () => {
     const user = localStorage.getItem("data");
-
-    const usersParse = JSON.parse(user);
-
-    return usersParse;
+    if (!user) return null;
+    return JSON.parse(user);
   };
 
   const handleLogin = (e) => {
     e.preventDefault();
     const storedUsers = getUser();
+
+    if (!storedUsers) {
+      alert("No hay usuarios registrados. Por favor regístrate primero.");
+      return;
+    }
+
     const storedUsername = storedUsers.username;
     const storedPassword = storedUsers.password;
 
     if (username === storedUsername && password === storedPassword) {
       console.log("Datos correctos");
 
+      const loggedUser = { username: storedUsername };
+
       localStorage.setItem("isLogged", true);
-      navigate("/");
+      localStorage.setItem("user", JSON.stringify(loggedUser));
+      setUser(loggedUser);
+
       setPassword("");
       setUsername("");
+      navigate("/");
     } else {
       alert("Datos incorrectos");
     }
