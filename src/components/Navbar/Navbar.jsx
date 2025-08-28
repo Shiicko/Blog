@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { redirect, useNavigate } from "react-router";
 import * as s from "./NavbarStyles";
-import { MainBtn } from "../button/MainBtn";
+import { MainBtn } from "../btn/MainBtn";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
 

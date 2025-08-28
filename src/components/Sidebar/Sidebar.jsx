@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
-import { MainBtn } from "../button/MainBtn";
+import { MainBtn } from "../btn/MainBtn";
 import { Profile } from "../Profile/Profile";
 import * as s from "./SidebarStyles";
 import { AuthContext } from "../../context/AuthContext";

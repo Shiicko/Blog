@@ -9,20 +9,27 @@ export default function Signup() {
     password: "",
     confirmPassword: "",
   });
-
   const handleForm = (e) => {
     e.preventDefault();
     if (data.password !== data.confirmPassword) {
       alert("La contraseña no coincide");
+      return;
     }
+
+    const storedUsers = JSON.parse(localStorage.getItem("data")) || [];
+    storedUsers.push({
+      username: data.username,
+      email: data.email,
+      password: data.password,
+    });
+    localStorage.setItem("data", JSON.stringify(storedUsers));
+
     setData({
       username: "",
       email: "",
       password: "",
       confirmPassword: "",
     });
-
-    localStorage.setItem("data", JSON.stringify(data));
   };
 
   const handleUserdata = (e) => {

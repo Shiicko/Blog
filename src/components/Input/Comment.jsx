@@ -37,7 +37,7 @@ export const Comment = ({ postId }) => {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
       <div style={{ display: "flex", gap: "30px", alignItems: "center" }}>
-        <Btn />
+        <Btn postId={postId} />
         {!isOpen ? (
           <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
             <FaRegComments size={30} onClick={handleComment} />

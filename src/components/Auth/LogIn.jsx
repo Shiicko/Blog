@@ -20,21 +20,14 @@ export const LogIn = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const storedUsers = getUser();
+    const storedUsers = JSON.parse(localStorage.getItem("data")) || [];
 
-    if (!storedUsers) {
-      alert("No hay usuarios registrados. Por favor regístrate primero.");
-      return;
-    }
+    const foundUser = storedUsers.find(
+      (u) => u.username === username && u.password === password
+    );
 
-    const storedUsername = storedUsers.username;
-    const storedPassword = storedUsers.password;
-
-    if (username === storedUsername && password === storedPassword) {
-      console.log("Datos correctos");
-
-      const loggedUser = { username: storedUsername };
-
+    if (foundUser) {
+      const loggedUser = { username: foundUser.username };
       localStorage.setItem("isLogged", true);
       localStorage.setItem("user", JSON.stringify(loggedUser));
       setUser(loggedUser);
