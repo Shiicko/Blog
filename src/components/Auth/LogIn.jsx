@@ -72,7 +72,7 @@ export const LogIn = () => {
         <s.Sign onClick={handleLogin}>Sign in</s.Sign>
       </s.Form>
       <s.Signup>
-        Don't have an account? <a href="/Signup">Sign up</a>
+        Don't have an account? <a href="/signup">Sign up</a>
       </s.Signup>
     </s.FormContainer>
   );

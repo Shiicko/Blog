@@ -23,12 +23,16 @@ export default function Signup() {
       alert("Completa los campos");
       return;
     }
-    const storedUsers = JSON.parse(localStorage.getItem("data")) || [];
+
+    let storedUsers = JSON.parse(localStorage.getItem("data"));
+    if (!Array.isArray(storedUsers)) storedUsers = [];
+
     storedUsers.push({
       username: data.username,
       email: data.email,
       password: data.password,
     });
+
     localStorage.setItem("data", JSON.stringify(storedUsers));
 
     setData({
@@ -37,12 +41,12 @@ export default function Signup() {
       password: "",
       confirmPassword: "",
     });
+
     navigate("/login");
   };
 
   const handleUserdata = (e) => {
     const { name, value } = e.target;
-
     setData({
       ...data,
       [name]: value,
@@ -100,7 +104,7 @@ export default function Signup() {
         <s.Sign style={{ marginTop: "10px" }}>Create account</s.Sign>
       </s.Form>
       <s.Signup>
-        Already have an account? <a href="/LogIn">Login</a>
+        Already have an account? <a href="/login">Login</a>
       </s.Signup>
     </s.FormContainer>
   );

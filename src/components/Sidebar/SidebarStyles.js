@@ -52,15 +52,17 @@ export const Menu = styled.div`
   z-index: 1000;
   border-radius: 0 15px 15px 0;
   box-shadow: 2px 0 12px rgba(0, 0, 0, 0.25);
+  padding-top: 60px;
 
   @media (min-width: 769px) {
-    position: static;
+    position: fixed;
+    top: 0;
+    left: 40px;
     width: 130px;
     height: 60vh;
     gap: 10px;
     border-radius: 20px;
     box-shadow: none;
-    left: 0;
   }
 `;
 
@@ -145,48 +147,5 @@ export const Button = styled.button`
   @media (max-width: 768px) {
     padding: 5px 8px;
     font-size: 0.8rem;
-  }
-`;
-
-export const Ul = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 30px 0 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-
-  @media (max-width: 768px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 15px 0;
-    gap: 0.5rem;
-  }
-`;
-
-export const Li = styled.li`
-  a,
-  span {
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 5px;
-    transition: background-color 0.2s ease-in-out;
-  }
-
-  a:hover,
-  span:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  @media (max-width: 480px) {
-    a,
-    span {
-      font-size: 0.8rem;
-      padding: 3px 6px;
-    }
   }
 `;
