@@ -7,11 +7,35 @@ export const container = styled.div`
 export const wrapper = styled.div`
   padding: 0;
 `;
+
 export const cardContainer = styled.div`
   display: flex;
-  margin-top: 20px;
-  gap: 5px;
+  gap: 12px;
   overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
 `;
 
 export const card = styled.div`
@@ -19,8 +43,9 @@ export const card = styled.div`
   border-radius: 10px;
   box-shadow: 5px 5px 15px #f0f0;
   overflow: hidden;
-  width: 100%;
-  max-width: 200px;
+  flex: 30%;
+  scroll-snap-align: start;
+
   img {
     object-fit: cover;
     height: 200px;
@@ -29,10 +54,26 @@ export const card = styled.div`
     border-radius: 10px;
     transition: transform 0.5s;
   }
+
   img:hover {
     transform: scale(1.1);
   }
+
+  @media (max-width: 768px) {
+    flex: 0 0 45%;
+    img {
+      height: 160px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    flex: 0 0 70%;
+    img {
+      height: 140px;
+    }
+  }
 `;
+
 export const overlay = styled.div`
   height: 0;
   width: 100%;
@@ -58,9 +99,10 @@ export const overlay = styled.div`
     transition: all 0.5s ease;
     color: white;
   }
+
   a {
     border-radius: 10px;
-    padding: 5px;
+    padding: 5px 10px;
     background-color: red;
   }
 
@@ -73,6 +115,21 @@ export const overlay = styled.div`
     a {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 0.9rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+    }
+
+    a {
+      font-size: 0.75rem;
+      padding: 4px 6px;
     }
   }
 `;

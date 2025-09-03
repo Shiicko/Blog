@@ -1,21 +1,28 @@
 /* eslint-disable no-unused-vars */
 import * as s from "./Logstyles";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function Signup() {
+  const navigate = useNavigate();
+
   const [data, setData] = useState({
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
+
   const handleForm = (e) => {
     e.preventDefault();
     if (data.password !== data.confirmPassword) {
       alert("La contraseña no coincide");
       return;
     }
-
+    if (data.username === "" || data.email === "") {
+      alert("Completa los campos");
+      return;
+    }
     const storedUsers = JSON.parse(localStorage.getItem("data")) || [];
     storedUsers.push({
       username: data.username,
@@ -30,6 +37,7 @@ export default function Signup() {
       password: "",
       confirmPassword: "",
     });
+    navigate("/login");
   };
 
   const handleUserdata = (e) => {

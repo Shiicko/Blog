@@ -11,8 +11,19 @@ export const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 10;
+
+  @media (max-width: 1024px) {
+    padding: 0.75rem 1.5rem;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 768px) {
+    /* flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem; */
+    display: none;
+  }
 `;
 
 export const Left = styled.div`
@@ -21,10 +32,29 @@ export const Left = styled.div`
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
+    margin-right: 1rem;
   }
 
   a:hover {
     text-decoration: underline rgba(167, 139, 250, 1);
+  }
+
+  @media (max-width: 1024px) {
+    a {
+      font-size: 0.95rem;
+      margin-right: 0.75rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    a {
+      font-size: 0.9rem;
+      margin-right: 0;
+    }
   }
 `;
 
@@ -34,9 +64,21 @@ export const Center = styled.div`
     font-weight: 600;
     color: rgba(243, 244, 246, 1);
   }
+
+  @media (max-width: 768px) {
+    span {
+      font-size: 1.1rem;
+    }
+  }
 `;
 
-export const Right = styled.div``;
+export const Right = styled.div`
+  @media (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+`;
 
 export const LoginButton = styled.a`
   background-color: rgb(241 241 241);
@@ -49,5 +91,10 @@ export const LoginButton = styled.a`
 
   &:hover {
     opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
   }
 `;

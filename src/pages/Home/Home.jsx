@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState, useEffect } from "react";
-import styled from "styled-components";
+import { useState, useEffect, useContext } from "react";
 import { Card } from "../../components/Card/Card";
 import { FormPost } from "../../components/Input/FormPost";
 import { Rsidebar } from "../../components/Sidebar/Rsidebar";
@@ -9,19 +8,12 @@ import { Posts } from "../Posts/Posts";
 import { mockPosts } from "../../data/mockPosts";
 import { Loader } from "../../components/Loader/Loader";
 import * as s from "./HomeStyles";
-
-const LoaderWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-`;
+import { AuthContext } from "../../Context/AuthContext";
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+  const { user } = useContext(AuthContext);
   useEffect(() => {
     setTimeout(() => {
       const saved = JSON.parse(localStorage.getItem("Post"));
@@ -35,7 +27,7 @@ export const Home = () => {
       ...newPost,
       id: crypto.randomUUID(),
       fecha: new Date().toLocaleDateString("es-AR"),
-      autor: "Paul Dirac",
+      autor: `${user.username}`,
       avatar:
         "https://upload.wikimedia.org/wikipedia/commons/8/8a/Paul_Dirac%2C_1933%2C_head_and_shoulders_portrait%2C_bw.jpg",
     };
@@ -46,9 +38,9 @@ export const Home = () => {
 
   if (isLoading) {
     return (
-      <LoaderWrapper>
+      <s.LoaderWrapper>
         <Loader />
-      </LoaderWrapper>
+      </s.LoaderWrapper>
     );
   }
 

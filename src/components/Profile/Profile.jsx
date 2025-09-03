@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
 import * as s from "./profileStlyes";
 import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../Context/AuthContext";
 
 export const Profile = ({ posts }) => {
   const { user } = useContext(AuthContext);

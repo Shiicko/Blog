@@ -5,19 +5,18 @@ export const container = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
+  width: 100%;
 
-  h2 {
-    margin-bottom: 30px;
-    font-size: 28px;
-    color: #f8fafc;
+  @media (max-width: 768px) {
+    padding-top: 20px;
   }
 `;
 
 export const cardContainer = styled.div`
   display: flex;
-  justify-content: center;
-  width: 100%;
   flex-direction: column;
+  width: 100%;
+  align-items: center;
 `;
 
 export const card = styled.div`
@@ -29,12 +28,27 @@ export const card = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 18px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+  }
 `;
 
 export const header = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 14px;
+  }
 `;
 
 export const avatar = styled.img`
@@ -42,18 +56,32 @@ export const avatar = styled.img`
   height: 50px;
   border-radius: 50%;
   margin-right: 14px;
+
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
 `;
 
 export const username = styled.p`
   font-weight: 600;
   font-size: 16px;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 
 export const date = styled.p`
   font-size: 13px;
   color: #c4c4c4ff;
   margin: 2px 0 0 0;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 export const image = styled.img`
@@ -61,19 +89,33 @@ export const image = styled.img`
   height: auto;
   border-radius: 8px;
   margin-bottom: 20px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 14px;
+  }
 `;
 
 export const content = styled.div`
   h3 {
     font-size: 20px;
     margin-bottom: 12px;
-    color: ffffff;
+    color: #000;
   }
 
   p {
     font-size: 15px;
     line-height: 1.6;
-    color: #a1a1aa;
+    color: #4b5563;
+  }
+
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -81,6 +123,12 @@ export const footer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 7px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
 `;
 
 export const tipButton = styled.button`
@@ -92,4 +140,9 @@ export const tipButton = styled.button`
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
 `;

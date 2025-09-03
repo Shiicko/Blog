@@ -60,6 +60,54 @@ const GlobalStyles = createGlobalStyle`
     border-color: #3b82f6;
     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+    }
+
+    button {
+      padding: 8px 14px;
+      font-size: 0.9rem;
+    }
+
+    input, textarea {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.25rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 6px 12px;
+      font-size: 0.85rem;
+    }
+
+    input, textarea {
+      font-size: 0.85rem;
+      padding: 6px;
+    }
+  }
 `;
 
 export default GlobalStyles;

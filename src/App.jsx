@@ -6,7 +6,7 @@ import { Navbar } from "./components/Navbar/Navbar";
 import { ErrorPage } from "./pages/Error/ErrorPage";
 import { Bank } from "./components/CardData/Bank";
 import { useContext } from "react";
-import { AuthContext } from "./context/AuthContext";
+import { AuthContext } from "./Context/AuthContext";
 
 export const App = () => {
   const location = useLocation();
