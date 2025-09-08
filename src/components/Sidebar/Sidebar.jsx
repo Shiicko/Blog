@@ -3,11 +3,12 @@ import { useContext, useState } from "react";
 import { MainBtn } from "../btn/MainBtn";
 import * as s from "./SidebarStyles";
 import { AuthContext } from "../../Context/AuthContext";
+import { useNavigate } from "react-router";
 
-export const Sidebar = () => {
+export const Sidebar = ({ countPosts }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
-
+  const Navigate = useNavigate();
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -27,12 +28,12 @@ export const Sidebar = () => {
         <s.Subtitle>Físico teórico</s.Subtitle>
 
         <s.Stats>
-          <p>Posteos: 8</p>
+          <p>Posts: {countPosts}</p>
           <p>Seguidores: 120</p>
           <p>Siguiendo: 87</p>
         </s.Stats>
 
-        <MainBtn onClick={() => console.log("Logout")}>Logout</MainBtn>
+        <MainBtn onClick={() => Navigate("/perfil")}>Perfil</MainBtn>
       </s.Menu>
     </s.container>
   );

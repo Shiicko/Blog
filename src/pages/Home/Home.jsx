@@ -36,6 +36,9 @@ export const Home = () => {
     localStorage.setItem("Post", JSON.stringify(updatedPosts));
   };
 
+  const userPosts = posts.filter((post) => post.autor === user?.username);
+  const countPosts = userPosts.length;
+
   if (isLoading) {
     return (
       <s.LoaderWrapper>
@@ -46,7 +49,7 @@ export const Home = () => {
 
   return (
     <s.wrapper>
-      <Sidebar />
+      <Sidebar countPosts={countPosts} />
       <Rsidebar />
       <s.content>
         <Card />
